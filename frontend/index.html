@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900' rel='stylesheet' type='text/css'>
+
+    <!-- Page title -->
+    <title>LUNA | Responsive Admin Theme</title>
+
+    <!-- Vendor styles -->
+    <link rel="stylesheet" href="vendor\fontawesome\css\font-awesome.css">
+    <link rel="stylesheet" href="vendor\animate.css\animate.css">
+    <link rel="stylesheet" href="vendor\bootstrap\css\bootstrap.css">
+
+    <!-- App styles -->
+    <link rel="stylesheet" href="styles\pe-icons\pe-icon-7-stroke.css">
+    <link rel="stylesheet" href="styles\pe-icons\helper.css">
+    <link rel="stylesheet" href="styles\stroke-icons\style.css">
+    <link rel="stylesheet" href="styles\style.css">
+</head>
+<body>
+
+<!-- Wrapper-->
+<div class="wrapper">
+
+    <!-- Header-->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div id="mobile-menu">
+                    <div class="left-nav-toggle">
+                        <a href="#">
+                            <i class="stroke-hamburgermenu"></i>
+                        </a>
+                    </div>
+                </div>
+                <a class="navbar-brand" style="letter-spacing: 2px;">
+                    Cryptography
+                </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown" style="padding-top: 10px;">
+                        <a>Versions
+                            <span class="label label-warning pull-right">1</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End header-->
+
+
+    <!-- Main content-->
+    <section class="content" style="margin-right: 200px;">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="view-header">
+                        <div class="pull-right text-right" style="line-height: 14px">
+                            <small>ECDiffieHellman<br>HashAlgorithm<br> <span class="c-white">HMAC</span></small>
+                        </div>
+                        <div class="header-icon">
+                            <i class="pe page-header-icon pe-7s-next-2"></i>
+                        </div>
+                        <div class="header-title">
+                            <h3>Лабораторная работа 3</h3>
+                            <small>
+                                Вычисление хеш сумм и работу с ECDH и HMAC в языке C#
+                            </small>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+
+
+            <div class="row draggable-container">
+
+                <div class="col-md-12">
+                    <div class="panel panel-filled">
+                        <div class="panel-heading">
+                            <div class="panel-tools">
+                                <a class="panel-toggle"><i class="fa fa-chevron-up"></i></a>
+                                <a class="panel-close"><i class="fa fa-times"></i></a>
+                            </div>
+                            Хэш файла
+                        </div>
+                        <div class="panel-body">
+                            <div class="col-lg-3">
+                                <!-- <p>Файл, хеш которого нужно вычислить</p> -->
+                                <label class="btn btn-accent"">
+                                    <!-- <form id='fileUpload' action='/file_hash' method='post' encType="multipart/form-data">
+                                        <input type="file" name="file"/>
+                                        <input type='submit' value='Upload!'/>
+                                    </form> -->
+                                    <input name="file" type="file" style="display:none;"
+                                           onchange="$('#upload-file-info').html($(this).val());">
+                                    <span id="upload-file-info">Выбрать файл</span>
+                                </label>
+                            </div>
+                            <div class="col-lg-2">
+                                <a id="getHash" class="btn btn-w-md btn-accent">Получить хеш</a>
+                            </div>
+                            <div class="col-lg-7">
+                                SHA-256: <span id="sha256"></span>
+                                <br>
+                                MD5: <span id="md5"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="panel panel-filled">
+                        <div class="panel-heading">
+                            <div class="panel-tools">
+                                <a class="panel-toggle"><i class="fa fa-chevron-up"></i></a>
+                                <a class="panel-close"><i class="fa fa-times"></i></a>
+                            </div>
+                            Валидацию подписи сообщения
+                        </div>
+                        <div class="panel-body">
+                            <div class="col-lg-6">
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Сообщение</label>
+
+                                        <div class="col-sm-10">
+                                            <input class="form-control" id="message" placeholder="Сообщение">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" style="padding-top: 8px;">Ключ</label>
+
+                                        <div class="col-sm-10">
+                                            <input class="form-control" id="key" placeholder="Ключ">
+                                        </div>
+                                    </div>
+                                    <a id="getHMAC" class="btn btn-w-md btn-accent" style="margin-left: 40%">Получить HMAC</a>
+                                </form>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>HMAC-SHA256</label>
+                                    <input class="form-control" id="hmac">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End main content-->
+
+</div>
+<!-- End wrapper-->
+
+<!-- Vendor scripts -->
+<script src="vendor\pacejs\pace.min.js"></script>
+<script src="vendor\jquery\dist\jquery.min.js"></script>
+<script src="vendor\jquery-ui\jquery-ui.min.js"></script>
+<script src="vendor\bootstrap\js\bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+
+        var element = ".draggable-container [class*=col]";
+        var handle = ".panel-body";
+        var connect = "[class*=col]";
+        $(element).sortable({
+            handle: handle,
+            connectWith: connect,
+            tolerance: 'pointer',
+            forcePlaceholderSize: true,
+            opacity: 0.8
+        }).disableSelection();
+    });
+
+    // При нажатии на кнопку 'getHash'
+    $('#getHash').click(function(){
+        var data = new FormData($('input[name^="file"]'));
+        jQuery.each($('input[name^="file"]')[0].files, function(i, file) {
+            data.append(i, file);
+        });
+
+        jQuery.ajax({
+            url: '/file_hash',
+            data: data,
+            contentType: false,
+            processData: false,
+            method: 'POST',
+            success: function(data){
+                console.log(data)
+                data = data.split('\r\n')
+                console.log(data)
+                $('#sha256').html('<code>' + data[0] + '</code>')
+                $('#md5').html('<code>' + data[1] + '</code>')
+            }
+        });
+    })
+
+    $('#getHMAC').click(function() {
+        jQuery.ajax({
+            url: '/string_hash',
+            data: {
+                key: $('#key').val(),
+                message: $('#message').val()
+            },
+            method: 'POST',
+            success: function(data){
+                $('#hmac').val(data)
+            }
+        });
+    })
+</script>
+
+</body>
+
+</html>

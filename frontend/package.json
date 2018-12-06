@@ -1,0 +1,19 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "MD5 and SHA-256 hash file",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/gistrec/HashAlgorithm.git"
+  },
+  "author": "gistrec",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gistrec/HashAlgorithm/issues"
+  },
+  "homepage": "https://github.com/gistrec/HashAlgorithm#readme"
+}
