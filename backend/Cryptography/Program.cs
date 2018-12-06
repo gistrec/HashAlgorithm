@@ -29,6 +29,8 @@ namespace Cryptography
 
             Console.WriteLine(BitConverter.ToString(sha256_hash).Replace("-", "").ToLowerInvariant());
             Console.WriteLine(BitConverter.ToString(md5_hash).Replace("-", "").ToLowerInvariant());
+
+            Environment.Exit(0);
         }
 
         static void getStringHash(string message, string key)
@@ -36,6 +38,8 @@ namespace Cryptography
             HMACSHA256 alice_hmac = new HMACSHA256(Encoding.UTF8.GetBytes(key));
             byte[] hash = alice_hmac.ComputeHash(Encoding.UTF8.GetBytes(message));
             Console.WriteLine(BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant());
+
+            Environment.Exit(0);
         }
 
 
@@ -43,6 +47,8 @@ namespace Cryptography
         {
             if (args[0] == "file_hash") getFileHash(args[1]);
             if (args[0] == "string_hash") getStringHash(args[1], args[2]);
+
+            Environment.Exit(1);
         }
     }
 }
